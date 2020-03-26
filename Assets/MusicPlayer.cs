@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MusicPlayer : MonoBehaviour
 {
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         Invoke("LoadNextScene", 5.0f);
