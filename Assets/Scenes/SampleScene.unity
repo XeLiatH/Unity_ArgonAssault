@@ -219,22 +219,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 963194228}
     m_Modifications:
-    - target: {fileID: 1866816278, guid: c609ff1263f22a045a115cc9524ecdc7, type: 3}
-      propertyPath: TrailModule.mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866816278, guid: c609ff1263f22a045a115cc9524ecdc7, type: 3}
-      propertyPath: TrailModule.sizeAffectsWidth
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866816278, guid: c609ff1263f22a045a115cc9524ecdc7, type: 3}
-      propertyPath: TrailModule.widthOverTrail.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1866816278, guid: c609ff1263f22a045a115cc9524ecdc7, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 1000012790150022, guid: c609ff1263f22a045a115cc9524ecdc7, type: 3}
       propertyPath: m_Name
       value: SpaceShip
