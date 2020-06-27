@@ -3,36 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
-    [Tooltip("In meters per second")] [SerializeField] float xSpeed = 6.0f;
+    [Header("General")]
+    [Tooltip("In meters per second")] [SerializeField] float speed = 6.0f;
     [Tooltip("In meters")] [SerializeField] float xRange = 2.5f;
-
-    [Tooltip("In meters per second")] [SerializeField] float ySpeed = 6.0f;
     [Tooltip("In meters")] [SerializeField] float yRange = 2.5f;
 
+    [Header("Screen-position Based")]
     [SerializeField] float positionPitchFactor = -5.0f;
     [SerializeField] float positionYawFactor = 5.0f;
 
+    [Header("Controle-throw Based")]
     [SerializeField] float controlPitchFactor = -30.0f;
     [SerializeField] float controlRollFactor = -15.0f;
 
     float xThrow, yThrow;
+    bool controlsEnabled = true;
 
     void Start()
     {
-
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        print("Player collided with something");
     }
 
     void Update()
     {
-        ProcessTranslation();
-        ProcessRotation();
+        if (controlsEnabled)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+        }
     }
 
     private void ProcessRotation()
@@ -47,13 +46,18 @@ public class Player : MonoBehaviour
     private void ProcessTranslation()
     {
         xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-        float xOffset = xThrow * xSpeed * Time.deltaTime;
+        float xOffset = xThrow * speed * Time.deltaTime;
         float xRaw = Mathf.Clamp(transform.localPosition.x + xOffset, -xRange, xRange);
 
         yThrow = CrossPlatformInputManager.GetAxis("Vertical");
-        float yOffset = yThrow * ySpeed * Time.deltaTime;
+        float yOffset = yThrow * speed * Time.deltaTime;
         float yRaw = Mathf.Clamp(transform.localPosition.y + yOffset, -yRange, yRange);
 
         transform.localPosition = new Vector3(xRaw, yRaw, transform.localPosition.z);
+    }
+
+    public void OnPlayerDeath() // called by string reference
+    {
+        controlsEnabled = false;
     }
 }

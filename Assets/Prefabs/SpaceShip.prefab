@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7839756074167588979}
   - component: {fileID: 7833835868276006741}
   - component: {fileID: 7823855375345365493}
-  - component: {fileID: 7836928974272963136}
   - component: {fileID: 7836928974027672857}
   - component: {fileID: 3776198675447219621}
+  - component: {fileID: 3926498169901713215}
+  - component: {fileID: 2596751632813175337}
   m_Layer: 0
   m_Name: SpaceShip
   m_TagString: Untagged
@@ -83,26 +84,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &7836928974272963136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7836774490729085881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c081505a5e7efb45bac26bcba49ed93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xSpeed: 6
-  xRange: 6
-  ySpeed: 6
-  yRange: 5
-  positionPitchFactor: -5
-  positionYawFactor: 5
-  controlPitchFactor: -30
-  controlRollFactor: -20
 --- !u!65 &7836928974027672857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -132,6 +113,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3926498169901713215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836774490729085881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeefca8cd50351145b8ca5dbb840cbd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2596751632813175337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7836774490729085881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c081505a5e7efb45bac26bcba49ed93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  xRange: 6
+  yRange: 5
+  positionPitchFactor: -5
+  positionYawFactor: 5
+  controlPitchFactor: -30
+  controlRollFactor: -15
 --- !u!1 &7836928973456675628
 GameObject:
   m_ObjectHideFlags: 0
