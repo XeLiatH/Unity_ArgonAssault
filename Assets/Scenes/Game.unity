@@ -5748,7 +5748,7 @@ PrefabInstance:
     - target: {fileID: 113706407542158236, guid: 33faacf9b4fb5e74d8c05d31bcbb646e,
         type: 3}
       propertyPath: m_Name
-      value: Obsacle
+      value: Obstacle
       objectReference: {fileID: 0}
     - target: {fileID: 113706407542158237, guid: 33faacf9b4fb5e74d8c05d31bcbb646e,
         type: 3}

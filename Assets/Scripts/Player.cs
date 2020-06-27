@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
 
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        print("Player collided with something");
+    }
+
     void Update()
     {
         ProcessTranslation();
