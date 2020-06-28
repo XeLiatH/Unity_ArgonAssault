@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject deathFX;
     [SerializeField] Transform parent;
+    [SerializeField] int scorePerHit = 13;
 
     ScoreBoard scoreBoard;
 
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
 
         if (null != scoreBoard)
         {
-            scoreBoard.ScoreHit();
+            scoreBoard.ScoreHit(scorePerHit);
         }
     }
 
