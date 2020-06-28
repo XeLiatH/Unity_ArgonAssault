@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Tooltip("In meters per second")] [SerializeField] float speed = 6.0f;
     [Tooltip("In meters")] [SerializeField] float xRange = 2.5f;
     [Tooltip("In meters")] [SerializeField] float yRange = 2.5f;
+    [SerializeField] GameObject[] guns;
 
     [Header("Screen-position Based")]
     [SerializeField] float positionPitchFactor = -5.0f;
@@ -31,6 +32,7 @@ public class PlayerController : MonoBehaviour
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessShooting();
         }
     }
 
@@ -54,6 +56,14 @@ public class PlayerController : MonoBehaviour
         float yRaw = Mathf.Clamp(transform.localPosition.y + yOffset, -yRange, yRange);
 
         transform.localPosition = new Vector3(xRaw, yRaw, transform.localPosition.z);
+    }
+
+    private void ProcessShooting()
+    {
+        foreach (GameObject gun in guns)
+        {
+            gun.SetActive(CrossPlatformInputManager.GetButton("Fire"));
+        }
     }
 
     public void OnPlayerDeath() // called by string reference
