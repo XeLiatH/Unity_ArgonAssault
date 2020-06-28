@@ -62,7 +62,8 @@ public class PlayerController : MonoBehaviour
     {
         foreach (GameObject gun in guns)
         {
-            gun.SetActive(CrossPlatformInputManager.GetButton("Fire"));
+            var emissionComponent = gun.GetComponent<ParticleSystem>().emission;
+            emissionComponent.enabled = CrossPlatformInputManager.GetButton("Fire");
         }
     }
 
